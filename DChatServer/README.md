@@ -11,3 +11,8 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+# Decentralised CHAT-SERVERS
+ you can chat with your friends through servers 
+ just joined the server and message your friends
+ your can also talk with anyone who is not in server by putting their address
