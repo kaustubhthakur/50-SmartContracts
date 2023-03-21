@@ -42,4 +42,5 @@ contract DChatServer {
     function getServer(uint _id) external view returns (Server memory) {
         return servers[_id];
     }
+
 }
