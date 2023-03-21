@@ -11,6 +11,8 @@ contract DChatServer {
         string name,
         string message
     );
+    address public creator;
+    address public buyer;
     mapping(uint256 => mapping(address => bool)) public people;
     uint public totalpeople;
     //server structure
@@ -18,13 +20,14 @@ contract DChatServer {
         string name;
         uint id;
         address creator;
+        uint cost;
     }
     mapping(uint256 => Server) public servers;
 
     //function that create server
-    function createServer(string memory _name, uint _id) external {
+    function createServer(string memory _name, uint _id,uint _cost) external {
         totalpeople++;
-        servers[totalpeople] = Server(_name, _id, msg.sender);
+        servers[totalpeople] = Server(_name, _id, msg.sender,_cost);
     }
 
     //sendMessage function
@@ -41,6 +44,14 @@ contract DChatServer {
 
     function getServer(uint _id) external view returns (Server memory) {
         return servers[_id];
+    }
+
+    function globalMessage(
+        address _receiver,
+        string memory _name,
+        string _message
+    ) external {
+        emit Message(msg.sender, _receiver, _name, _message);
     }
 
 }
