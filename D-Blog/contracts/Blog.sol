@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 import "hardhat/console.sol";
 
@@ -26,5 +25,14 @@ contract Blog {
         totalPost++;
         posts[totalPost] = Post(_title,msg.sender,_description,totalPost);
         emit createItem(_title, msg.sender, _description, totalPost);
+    }
+
+    function deletePost(uint256 _id) external 
+    {
+        require(totalPost<_id,"post with that id doesnt exists");
+        totalPost--;
+        delete (posts[_id]);
+
+       
     }
 }
