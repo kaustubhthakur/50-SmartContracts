@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 import "hardhat/console.sol";
 
@@ -6,7 +7,7 @@ contract Blog {
         string title;
         address creator;
         string description;
-        uint id;
+        uint256 id;
     }
     event createItem(
         string title,
@@ -16,23 +17,23 @@ contract Blog {
     );
 
     mapping(uint256 => Post) public posts;
-    uint public totalPost;
+    uint256 public totalPost;
 
-    function createPost(
-        string memory _title,
-        string memory _description
-    ) external {
+    function createPost(string memory _title, string memory _description)
+        external
+    {
         totalPost++;
-        posts[totalPost] = Post(_title,msg.sender,_description,totalPost);
+        posts[totalPost] = Post(_title, msg.sender, _description, totalPost);
         emit createItem(_title, msg.sender, _description, totalPost);
     }
 
-    function deletePost(uint256 _id) external 
+    function updatePost(string memory _name, string memory _description,uint256 _id) external 
     {
-        require(totalPost<_id,"post with that id doesnt exists");
-        totalPost--;
-        delete (posts[_id]);
+        
+    }
 
-       
+    function deletePost(uint256 _id) external {
+        require(totalPost < _id, "post with that id doesnt exists");
+        delete (posts[_id]);
     }
 }
