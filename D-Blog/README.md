@@ -1,13 +1,3 @@
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+# Decentralised Blog 
+ 1) Your Can Create,Update,Delete the Post and Can also Send The post to Your Friends 
+ 2) You can Send Post to your Friends and also you can give then rights of that post through stepping down as creator of that post and making them owner of that post

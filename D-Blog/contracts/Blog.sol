@@ -35,9 +35,13 @@ contract Blog {
 
     function sendPost(address _receiver, uint256 _id) external {
         emit sendItem(msg.sender, _receiver, _id);
-        owner = _receiver;
+    
     }
-
+function sendPostAndMakeThemOwner(address _receiver,uint256 _id) external 
+{
+    emit sendItem(msg.sender, _receiver, _id);
+        owner = _receiver;
+}
     function updatePost(
         string memory _title,
         string memory _description,
