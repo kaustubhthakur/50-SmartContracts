@@ -1,5 +1,5 @@
 {
-  "name": "attendance",
+  "name": "bankingsystem",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,10 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "hardhat": "^2.13.0"
-  },
-  "dependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
-    "@openzeppelin/contracts": "^4.8.2"
+    "hardhat": "^2.14.0"
   }
 }

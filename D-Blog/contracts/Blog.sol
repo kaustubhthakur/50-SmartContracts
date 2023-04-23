@@ -10,7 +10,12 @@ contract Blog {
         uint256 id;
     }
     address public owner;
-    event sendItem(address creator, address receiver, uint256 id);
+
+    event sendItem(
+        address creator,
+         address receiver,
+          uint256 id
+          );
     event createItem(
         string title,
         address indexed creator,
@@ -25,9 +30,10 @@ contract Blog {
     mapping(uint256 => Post) public posts;
     uint256 public totalPost;
 
-    function createPost(string memory _title, string memory _description)
-        external
-    {
+    function createPost(
+        string memory _title,
+        string memory _description
+    ) external {
         totalPost++;
         posts[totalPost] = Post(_title, msg.sender, _description, totalPost);
         emit createItem(_title, msg.sender, _description, totalPost);
@@ -35,13 +41,13 @@ contract Blog {
 
     function sendPost(address _receiver, uint256 _id) external {
         emit sendItem(msg.sender, _receiver, _id);
-    
     }
-function sendPostAndMakeThemOwner(address _receiver,uint256 _id) external 
-{
-    emit sendItem(msg.sender, _receiver, _id);
+
+    function sendPostAndMakeThemOwner(address _receiver, uint256 _id) external {
+        emit sendItem(msg.sender, _receiver, _id);
         owner = _receiver;
-}
+    }
+
     function updatePost(
         string memory _title,
         string memory _description,
