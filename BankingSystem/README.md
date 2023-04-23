@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# Banking System Smart-contract
+  It is a smartcontract where users can deposit withdraw and transfer their money
+  It is mini version of the bank/or modern/future of banking
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+  <ul>
+  <li>users can create their Account by putting any initial amount>0</li>
+  <li>users can deposit their money any amount>0</li>
+  <li>users can withdraw their money any amount>0</li>
+  <li>users can transfer their money to someone else by providing their address(valid) and amount>0</li>
+  </ul>
